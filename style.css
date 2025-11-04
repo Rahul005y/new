@@ -1,17 +1,74 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
 }
 
-html ,body{
-    width: 100%;
-    height: 100%;
-    display: flex;
-     align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+.container {
+  width: 320px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  color: white;
 }
 
+h2 {
+  margin-bottom: 25px;
+  font-weight: 500;
+}
 
+.progress-bar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progress {
+  width: 0%;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 25px;
+  transition: width 0.1s;
+}
+
+/* Percentage below */
+#percentage {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+/* Button */
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+button:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+}

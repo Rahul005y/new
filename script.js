@@ -1,11 +1,23 @@
-let h1 = document.querySelector("h1");
+const downloadBtn = document.getElementById('downloadBtn');
+const progress = document.getElementById('progress');
+const percentage = document.getElementById('percentage');
 
-window.addEventListener("keydown", function(kuch) {
-  if (kuch.key === " ") {
-    h1.textContent = "SPC"; // shows "SPC" when space is pressed
-  } else {
-    h1.textContent = kuch.key; // shows other key names
-  }
+downloadBtn.addEventListener('click', () => {
+  downloadBtn.disabled = true;
+  downloadBtn.textContent = "Downloading...";
+   
+  let width = 0;
 
-  console.log(kuch.key);
+  const interval = setInterval(() => {
+    if(width >= 100){
+      clearInterval(interval);
+      percentage.textContent = "Completed!";
+      downloadBtn.disabled = false;
+      downloadBtn.textContent = "Download Again";
+    } else {
+      width++;
+      progress.style.width = width + '%';
+      percentage.textContent = width + '%';
+    }
+  }, 50);
 });
